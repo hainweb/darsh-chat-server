@@ -14,7 +14,7 @@ const io = new Server(server, {
 
   cors: {
     origin: process.env.FRONTEND_URL,
-    methods: ["GET", "POST"],
+  //  methods: ["GET", "POST"],
   //  allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
    

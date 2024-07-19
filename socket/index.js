@@ -1,4 +1,25 @@
-const express = require('express');
+ import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { logout, setOnlineUser, setSocketConnection, setUser } from '../redux/userSlice'
+import Sidebar from '../components/Sidebar'
+import logo from '../assets/logo.png'
+import io from 'socket.io-client'
+
+const Home = () => {
+  const user = useSelector(state => state.user)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  console.log('user', user)
+  const fetchUserDetails = async () => {
+    try {
+      const URL = ${process.env.REACT_APP_BACKEND_URL}/api/user-details
+      const response = await axios({
+        url: UR…
+[8:01 pm, 19/7/2024] Ajin: const express = require('express');
 const { Server } = require('socket.io');
 const http = require('http');
 const getUserDetailsFromToken = require('../helpers/getUserDetailsFromToken');
@@ -11,20 +32,15 @@ const app = express();
 /***socket connection */
 const server = http.createServer(app);
 const io = new Server(server, {
-
   cors: {
     origin: process.env.FRONTEND_URL,
-  //  methods: ["GET", "POST"],
-   allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
-   
   }
- 
 });
 
-/***
- * socket running at http://localhost:8080/
- */
+console.log('Server CORS origin:', process.env.FRONTEND_URL); // Log the frontend URL
 
 // Online user
 const onlineUser = new Set();

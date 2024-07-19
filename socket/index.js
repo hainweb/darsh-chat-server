@@ -11,30 +11,6 @@ const app = express();
 /***socket connection */
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: {
-    origin: process.env.FRONTEND_URL,
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-  }
-});
-
-console.log('Server CORS origin:', process.env.FRONTEND_URL); // Log the frontend URL
-
-// Online use…
-[8:02 pm, 19/7/2024] Ajin: const express = require('express');
-const { Server } = require('socket.io');
-const http = require('http');
-const getUserDetailsFromToken = require('../helpers/getUserDetailsFromToken');
-const UserModel = require('../models/UserModel');
-const { ConversationModel, MessageModel } = require('../models/ConversationModel');
-const getConversation = require('../helpers/getConversation');
-
-const app = express();
-
-/***socket connection */
-const server = http.createServer(app);
-const io = new Server(server, {
 
   cors: {
     origin: process.env.FRONTEND_URL,

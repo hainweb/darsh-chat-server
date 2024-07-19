@@ -1,4 +1,4 @@
- import axios from 'axios'
+[7:16 pm, 19/7/2024] Ajin: import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
@@ -41,6 +41,35 @@ const io = new Server(server, {
 });
 
 console.log('Server CORS origin:', process.env.FRONTEND_URL); // Log the frontend URL
+
+// Online use…
+[8:02 pm, 19/7/2024] Ajin: const express = require('express');
+const { Server } = require('socket.io');
+const http = require('http');
+const getUserDetailsFromToken = require('../helpers/getUserDetailsFromToken');
+const UserModel = require('../models/UserModel');
+const { ConversationModel, MessageModel } = require('../models/ConversationModel');
+const getConversation = require('../helpers/getConversation');
+
+const app = express();
+
+/***socket connection */
+const server = http.createServer(app);
+const io = new Server(server, {
+
+  cors: {
+    origin: process.env.FRONTEND_URL,
+  //  methods: ["GET", "POST"],
+   allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+   
+  }
+ 
+});
+
+/*
+ * socket running at http://localhost:8080/
+ */
 
 // Online user
 const onlineUser = new Set();

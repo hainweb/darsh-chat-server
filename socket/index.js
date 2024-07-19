@@ -16,7 +16,9 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
+   
   }
+  pingTimeout: 60000
 });
 
 /***

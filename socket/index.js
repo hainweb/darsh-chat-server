@@ -1,4 +1,4 @@
-[7:16 pm, 19/7/2024] Ajin: import axios from 'axios'
+import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'

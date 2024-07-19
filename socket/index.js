@@ -11,6 +11,7 @@ const app = express();
 /***socket connection */
 const server = http.createServer(app);
 const io = new Server(server, {
+  pingTimeout: 60000
   cors: {
     origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
@@ -18,7 +19,7 @@ const io = new Server(server, {
     credentials: true
    
   }
-  pingTimeout: 60000
+ 
 });
 
 /***

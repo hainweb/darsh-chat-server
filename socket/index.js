@@ -23,6 +23,8 @@ const io = new Server(server, {
 const onlineUser = new Set();
 
 io.on('connection', async (socket) => {
+   console.log("A client is attempting to connect."); // Add logging
+  console.log("Socket ID:", socket.id); // Add logging
   console.log("Connected user: ", socket.id);
 
   const token = socket.handshake.auth.token;

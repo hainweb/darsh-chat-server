@@ -8,6 +8,9 @@ const getConversation = require('../helpers/getConversation');
 
 const app = express();
 
+console.log('FRONTEND_URL:', process.env.FRONTEND_URL); // Log the FRONTEND_URL to ensure it's set
+
+
 /***socket connection */
 const server = http.createServer(app);
 const io = new Server(server, {
